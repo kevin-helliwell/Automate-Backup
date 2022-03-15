@@ -1,13 +1,21 @@
 # Import the following modules
+from multiprocessing.sharedctypes import Array
 import shutil
 from datetime import date
 import os
 import sys
 
+# What it actually does
+# Makes an array of directories to copy into backup folders
+# Loops over array to copy directories into separate backup folders
+# Creates main backup folder to bundle them into
+# Moves backup folders into main backup folder
+
 # What I need this script to do:
 # 1) Create new backup folder, rename with today's date
 # 2) Copy folders/files from source folder given paths of folders/files
 # 3) Paste files to backup folder given path of backup folder
+
 
 arr = ["Interface", "WTF"]
 
@@ -15,11 +23,11 @@ today = date.today()
 date_format = today.strftime("%d_%b_%Y_")
 path = "C:/Users/kbh78/Desktop"
 
-src1 = "C:/Program Files (x86)/World of Warcraft/_retail_/Interface"
+src1 = f"C:/Program Files (x86)/World of Warcraft/_retail_/{arr[0]}"
 dst1 = f"C:/Users/kbh78/Desktop/{arr[0]} Backup " + f"{date_format}"
 shutil.copytree(src1, dst1)
 
-src2 = "C:/Program Files (x86)/World of Warcraft/_retail_/WTF"
+src2 = f"C:/Program Files (x86)/World of Warcraft/_retail_/{arr[1]}"
 dst2 = f"C:/Users/kbh78/Desktop/{arr[1]} Backup " + f"{date_format}"
 shutil.copytree(src2, dst2)
 
