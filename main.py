@@ -26,20 +26,47 @@ import sys
 # sub_dir(s): "Interface", "WTF"
 # backup_dir: "C:/Users/kbh78/Desktop"
 
-today = date.today()
-date_format = today.strftime("%d_%b_%Y_")
+# obj = {"C:/Program Files (x86)/World of Warcraft/_retail_", ["Interface, WTF"], "C:/Users/kbh78/Desktop", "UI_Backup" }
 
-# Makes backup folder in destination path
-main_backup_path = "C:/Users/kbh78/Desktop"
-backup_name = "UI_Backup"
-local_backup_path = main_backup_path + f"/{backup_name} " + f"{date_format}"
-os.mkdir(local_backup_path)
 
-# Makes copies of sub-directories in main backup path, moves them into backup folder
-source_path = "C:/Program Files (x86)/World of Warcraft/_retail_"
-arr = ["Interface", "WTF"]
-for i in range(0, len(arr)):
-    src = f"{source_path}/{arr[i]}"
-    dst = f"{main_backup_path}/{arr[i]} Backup " + f"{date_format}"
-    shutil.copytree(src, dst)
-    shutil.move(dst, local_backup_path)
+def create_backup(source_path, source_sub_arr, backup_path, backup_name):
+
+    # Sets up date for backup
+    today = date.today()
+    date_format = today.strftime("%d_%b_%Y_")
+
+    # Makes backup folder in destination path
+    local_backup_path = backup_path + f"/{backup_name} " + f"{date_format}"
+    os.mkdir(local_backup_path)
+
+    # Makes copies of sub-directories in main backup path, moves them into backup folder
+    for i in range(0, len(source_sub_arr)):
+        src = f"{source_path}/{source_sub_arr[i]}"
+        dst = f"{backup_path}/{source_sub_arr[i]} Backup " + f"{date_format}"
+        shutil.copytree(src, dst)
+        shutil.move(dst, local_backup_path)
+
+
+create_backup(
+    "C:/Program Files (x86)/World of Warcraft/_retail_",
+    ["Interface", "WTF"],
+    "C:/Users/kbh78/Desktop",
+    "UI_Backup",
+)
+# today = date.today()
+# date_format = today.strftime("%d_%b_%Y_")
+
+# # Makes backup folder in destination path
+# main_backup_path = "C:/Users/kbh78/Desktop"
+# backup_name = "UI_Backup"
+# local_backup_path = main_backup_path + f"/{backup_name} " + f"{date_format}"
+# os.mkdir(local_backup_path)
+
+# # Makes copies of sub-directories in main backup path, moves them into backup folder
+# source_path = "C:/Program Files (x86)/World of Warcraft/_retail_"
+# arr = ["Interface", "WTF"]
+# for i in range(0, len(arr)):
+#     src = f"{source_path}/{arr[i]}"
+#     dst = f"{main_backup_path}/{arr[i]} Backup " + f"{date_format}"
+#     shutil.copytree(src, dst)
+#     shutil.move(dst, local_backup_path)
