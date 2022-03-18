@@ -48,6 +48,14 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
 #     "UI_Backup",
 # )
 
+# Example
+# create_backup(
+#     "C:/Program Files (x86)/World of Warcraft/_retail_",
+#     ["Interface", "WTF", "Logs"],
+#     "C:/Users/kbh78/Desktop",
+#     "UI_Backup",
+# )
+
 
 # OLD WAY
 # today = date.today()
