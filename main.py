@@ -41,12 +41,12 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
 
 
 # Example
-create_backup(
-    "C:/Program Files (x86)/World of Warcraft/_retail_",
-    ["Interface", "WTF"],
-    "C:/Users/kbh78/Desktop",
-    "UI_Backup",
-)
+# create_backup(
+#     "C:/Program Files (x86)/World of Warcraft/_retail_",
+#     ["Interface", "WTF"],
+#     "C:/Users/kbh78/Desktop",
+#     "UI_Backup",
+# )
 
 
 # OLD WAY
