@@ -47,7 +47,6 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
 #     "C:/Users/kbh78/Desktop",
 #     "UI_Backup",
 # )
-<<<<<<< Updated upstream
 
 # Example
 # create_backup(
@@ -56,8 +55,6 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
 #     "C:/Users/kbh78/Desktop",
 #     "UI_Backup",
 # )
-=======
->>>>>>> Stashed changes
 
 
 # OLD WAY
