@@ -2,7 +2,7 @@
 import shutil
 from datetime import date
 import os
-import sys
+# import sys
 
 # What I need this script to do:
 # 1) Create new backup folder, rename with today's date
@@ -76,3 +76,4 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
 #     shutil.copytree(src, dst)
 #     shutil.move(dst, local_backup_path)
 # OLD WAY
+
