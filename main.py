@@ -40,7 +40,7 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
         shutil.move(dst, local_backup_path)
 
 
-Example
+# Example
 create_backup(
     "C:/Program Files (x86)/World of Warcraft/_retail_",
     ["Interface", "WTF"],
