@@ -78,3 +78,6 @@ create_backup(
 #     shutil.move(dst, local_backup_path)
 # OLD WAY
 
+# Where to go from here:
+# 1) Make a GUI
+# 2) Refactor create_backup for more generality (multiple directories, etc.)
