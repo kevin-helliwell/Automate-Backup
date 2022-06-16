@@ -2,6 +2,7 @@
 import shutil
 from datetime import date
 import os
+import time
 # import sys
 
 # What I need this script to do:
@@ -24,6 +25,9 @@ import os
 
 def create_backup(source_path, source_sub_arr, backup_path, backup_name):
 
+    # Starts timer
+    start = time.time()
+
     # Initializes date for backup folder to name itself correctly
     today = date.today()
     date_format = today.strftime("%d_%b_%Y_")
@@ -33,18 +37,20 @@ def create_backup(source_path, source_sub_arr, backup_path, backup_name):
     os.mkdir(local_backup_path)
 
     # Creates copies of chosen sub-directories (source_sub_arr) in source path, then moves them into backup folder
-    for i in range(0, len(source_sub_arr)):
+    for i in range(len(source_sub_arr)):
         src = f"{source_path}/{source_sub_arr[i]}"
         dst = f"{backup_path}/{source_sub_arr[i]} Backup " + f"{date_format}"
         shutil.copytree(src, dst)
         shutil.move(dst, local_backup_path)
 
+    end = time.time()
+    print(f"Completed in {round(end-start, 2)} seconds")
 
 # Example
 create_backup(
     "C:/Program Files (x86)/World of Warcraft/_retail_",
     ["Interface", "WTF"],
-    "C:/Users/kbh78/Desktop",
+    "C:/Program Files (x86)/World of Warcraft/_retail_",
     "UI_Backup",
 )
 
